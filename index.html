@@ -3,37 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carry On My Wayward Con | Unofficial Fan Meetup</title>
-  <meta name="description" content="Carry On My Wayward Con — an unofficial fan-organized Supernatural-inspired fan meetup series in Louisville and Indianapolis." />
-
+  <title>Carry On My Wayward Con | Unofficial Fan Convention</title>
+  <meta name="description" content="Unofficial fan convention meetup series featuring the Louisville and Indiana flyers." />
   <style>
     :root {
-      --ink: #05070a;
-      --night: #0a1119;
+      --bg: #05070a;
+      --bg2: #0b121b;
+      --panel: rgba(10,17,25,0.9);
+      --panel-soft: rgba(14,24,36,0.82);
       --cream: #efe1c3;
-      --muted: #b6a381;
       --gold: #c29245;
       --gold-bright: #e0b968;
-      --red: #b53a2f;
-      --line: rgba(224, 185, 104, 0.36);
-      --white-soft: rgba(255,255,255,0.86);
-      --shadow: 0 24px 80px rgba(0,0,0,0.45);
+      --muted: #bba989;
+      --line: rgba(224,185,104,0.28);
+      --shadow: 0 22px 60px rgba(0,0,0,0.45);
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
       color: var(--cream);
+      font-family: Georgia, "Times New Roman", serif;
       background:
-        radial-gradient(circle at 20% 5%, rgba(91,122,149,0.34), transparent 28%),
-        radial-gradient(circle at 78% 18%, rgba(194,146,69,0.16), transparent 24%),
-        linear-gradient(180deg, #020305 0%, #0b121b 42%, #05070a 100%);
+        radial-gradient(circle at 20% 0%, rgba(59,84,111,0.35), transparent 26%),
+        radial-gradient(circle at 82% 10%, rgba(194,146,69,0.12), transparent 24%),
+        linear-gradient(180deg, #020305 0%, #09111a 45%, #040608 100%);
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
     body::before {
@@ -41,729 +37,275 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.16;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mix-blend-mode: screen;
+      background-image: radial-gradient(rgba(255,255,255,0.45) 0.8px, transparent 0.9px);
+      background-size: 42px 42px;
+      opacity: 0.18;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.22;
-      background-image: radial-gradient(rgba(255,255,255,0.5) 0.7px, transparent 0.8px);
-      background-size: 39px 39px;
-      mask-image: linear-gradient(to bottom, black, transparent 72%);
-    }
+    .wrap { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
 
-    .site-wrap {
+    header.hero {
       position: relative;
-      isolation: isolate;
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(14px);
-      background: rgba(5,7,10,0.78);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      font: 700 0.78rem/1.1 Arial, Helvetica, sans-serif;
-      color: var(--gold-bright);
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      box-shadow: 0 0 24px rgba(194,146,69,0.28);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      font: 700 0.78rem Arial, Helvetica, sans-serif;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a {
-      color: rgba(239,225,195,0.8);
-      text-decoration: none;
-    }
-
-    .nav-links a:hover { color: var(--gold-bright); }
-
-    .hero {
-      min-height: 92vh;
-      display: grid;
-      place-items: center;
-      padding: 82px 20px 56px;
-      position: relative;
+      text-align: center;
+      padding: 72px 0 38px;
       overflow: hidden;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -20%;
-      z-index: -2;
-      background:
-        linear-gradient(to bottom, rgba(5,7,10,0.1), rgba(5,7,10,0.76)),
-        radial-gradient(ellipse at center, transparent 0 25%, rgba(0,0,0,0.62) 70%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='500' viewBox='0 0 900 500'%3E%3Cg fill='none' stroke='%23e0b968' stroke-opacity='.20'%3E%3Cpath d='M140 180c90-90 180-110 300-40 125-80 228-60 320 35'/%3E%3Cpath d='M145 205c106-62 210-68 298-21 102-56 205-48 306 22'/%3E%3Cpath d='M90 430c120-160 230-240 352-244 130 10 250 85 368 244'/%3E%3C/g%3E%3Cg fill='%23efe1c3' fill-opacity='.30'%3E%3Ccircle cx='118' cy='68' r='2'/%3E%3Ccircle cx='298' cy='90' r='1.4'/%3E%3Ccircle cx='690' cy='65' r='1.8'/%3E%3Ccircle cx='782' cy='142' r='1.2'/%3E%3C/g%3E%3C/svg%3E");
-      background-size: cover;
-      filter: saturate(0.75);
-      animation: drift 24s ease-in-out infinite alternate;
-    }
-
-    @keyframes drift {
-      from { transform: translate3d(-1%, -1%, 0) scale(1.02); }
-      to { transform: translate3d(1%, 1%, 0) scale(1.06); }
-    }
-
-    .hero-grid {
-      width: min(1160px, 100%);
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 34px;
-      align-items: center;
-    }
-
     .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 14px;
+      display: inline-block;
       border: 1px solid var(--line);
       color: var(--gold-bright);
-      background: rgba(10,17,25,0.76);
-      box-shadow: inset 0 0 18px rgba(224,185,104,0.08);
+      background: rgba(8,13,19,0.72);
+      padding: 10px 16px;
+      border-radius: 999px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      font: 800 0.72rem Arial, Helvetica, sans-serif;
-      border-radius: 999px;
+      font: 800 0.72rem/1 Arial, Helvetica, sans-serif;
+      margin-bottom: 18px;
     }
 
-    .hero-title {
-      margin: 18px 0 12px;
+    h1 {
+      margin: 0;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.035em;
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: clamp(3.5rem, 8vw, 8.8rem);
-      line-height: 0.86;
+      letter-spacing: 0.03em;
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      line-height: 0.88;
       color: var(--cream);
-      text-shadow: 0 10px 0 rgba(0,0,0,0.45), 0 0 38px rgba(224,185,104,0.16);
-      max-width: 870px;
+      text-shadow: 0 10px 0 rgba(0,0,0,0.35), 0 0 28px rgba(224,185,104,0.12);
     }
 
-    .hero-title span {
+    h1 span {
       display: block;
       color: transparent;
-      -webkit-text-stroke: 1px rgba(239,225,195,0.8);
+      -webkit-text-stroke: 1px rgba(239,225,195,0.82);
       text-shadow: none;
     }
 
-    .subtitle {
-      max-width: 690px;
-      font: 1.2rem/1.7 Arial, Helvetica, sans-serif;
-      color: rgba(239,225,195,0.82);
-      margin: 0 0 28px;
+    .subhead {
+      max-width: 880px;
+      margin: 18px auto 0;
+      font: 1.06rem/1.8 Arial, Helvetica, sans-serif;
+      color: rgba(239,225,195,0.8);
     }
 
-    .meta-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .meta-pill {
+    .disclaimer {
+      margin: 34px auto 0;
+      max-width: 980px;
       border: 1px solid var(--line);
-      background: rgba(5,7,10,0.72);
-      padding: 13px 15px;
-      border-radius: 14px;
-      min-width: 168px;
+      background: linear-gradient(180deg, rgba(16,28,42,0.88), rgba(6,9,13,0.95));
+      border-radius: 22px;
+      padding: 22px 24px;
       box-shadow: var(--shadow);
     }
 
-    .meta-pill small {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--muted);
-      font: 800 0.68rem Arial, Helvetica, sans-serif;
-      letter-spacing: 0.14em;
+    .disclaimer .label {
+      color: var(--gold-bright);
       text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font: 900 0.72rem/1 Arial, Helvetica, sans-serif;
+      margin-bottom: 10px;
     }
 
-    .meta-pill strong {
-      font: 800 1rem Arial, Helvetica, sans-serif;
-      color: var(--white-soft);
+    .disclaimer p {
+      margin: 0;
+      color: rgba(239,225,195,0.84);
+      font: 0.98rem/1.75 Arial, Helvetica, sans-serif;
     }
 
-    .cta-row {
+    section.flyers {
+      padding: 28px 0 72px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 0 0 24px;
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font: 900 0.76rem/1 Arial, Helvetica, sans-serif;
+    }
+
+    .flyer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .flyer-card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(14,24,36,0.92), rgba(6,9,13,0.95));
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .flyer-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #000;
+    }
+
+    .flyer-copy {
+      padding: 20px 22px 24px;
+    }
+
+    .flyer-eyebrow {
+      color: var(--gold-bright);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font: 900 0.7rem/1 Arial, Helvetica, sans-serif;
+      margin-bottom: 10px;
+    }
+
+    .flyer-copy h2 {
+      margin: 0 0 10px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 0.95;
+      color: var(--cream);
+    }
+
+    .flyer-copy p {
+      margin: 0;
+      color: rgba(239,225,195,0.76);
+      font: 0.98rem/1.7 Arial, Helvetica, sans-serif;
+    }
+
+    .meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .pill {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(4,8,12,0.55);
+      color: var(--cream);
+      font: 800 0.72rem/1 Arial, Helvetica, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .download-row {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
-      padding: 0 22px;
-      border-radius: 999px;
       text-decoration: none;
-      font: 900 0.8rem Arial, Helvetica, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
-    }
-
-    .button-primary {
-      color: #090907;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
       background: linear-gradient(135deg, var(--gold-bright), var(--gold));
-      box-shadow: 0 18px 35px rgba(194,146,69,0.22);
-    }
-
-    .button-secondary {
-      color: var(--cream);
-      border: 1px solid var(--line);
-      background: rgba(5,7,10,0.58);
-    }
-
-    .button:hover { transform: translateY(-2px); }
-
-    .poster-card {
-      position: relative;
-      border: 1px solid var(--line);
-      background:
-        linear-gradient(180deg, rgba(16,28,42,0.92), rgba(5,7,10,0.94)),
-        radial-gradient(circle at 35% 0%, rgba(224,185,104,0.16), transparent 36%);
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      min-height: 580px;
-    }
-
-    .poster-card::before,
-    .poster-card::after {
-      content: "";
-      position: absolute;
-      width: 240px;
-      height: 520px;
-      top: 18px;
-      opacity: 0.12;
-      background: repeating-linear-gradient(75deg, transparent 0 13px, var(--cream) 13px 16px, transparent 16px 28px);
-      filter: blur(0.4px);
-    }
-
-    .poster-card::before { left: -96px; transform: skewY(-8deg); }
-    .poster-card::after { right: -96px; transform: scaleX(-1) skewY(-8deg); }
-
-    .poster-content { position: relative; z-index: 1; }
-
-    .poster-label {
-      color: var(--gold-bright);
-      font: 900 0.72rem Arial, Helvetica, sans-serif;
-      letter-spacing: 0.18em;
+      color: #090907;
+      font: 900 0.75rem/1 Arial, Helvetica, sans-serif;
       text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .poster-date {
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      text-transform: uppercase;
-      font-size: clamp(2.5rem, 5vw, 4.4rem);
-      line-height: 0.95;
-      margin-bottom: 22px;
-      color: var(--cream);
-    }
-
-    .warning-box {
-      border: 1px solid rgba(224,185,104,0.42);
-      background: rgba(3,7,12,0.66);
-      border-radius: 20px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-
-    .warning-box small {
-      display: block;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font: 900 0.68rem Arial, Helvetica, sans-serif;
-      margin-bottom: 8px;
-    }
-
-    .warning-box strong {
-      display: block;
-      color: var(--gold-bright);
-      font: 900 1.04rem/1.45 Arial, Helvetica, sans-serif;
-    }
-
-    .warning-box em {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--red);
-      font-style: normal;
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      letter-spacing: 0.08em;
-      font-size: 2rem;
-      text-transform: uppercase;
-    }
-
-    .car-scene {
-      min-height: 170px;
-      margin-top: 26px;
-      position: relative;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background:
-        linear-gradient(155deg, transparent 0 42%, rgba(255,255,255,0.08) 42.3% 43%, transparent 43.3%),
-        linear-gradient(180deg, rgba(50,73,92,0.58), rgba(0,0,0,0.72));
-    }
-
-    .road {
-      position: absolute;
-      inset: auto -12% -42% -12%;
-      height: 130px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(0,0,0,0.36)), #101217;
-      transform: perspective(180px) rotateX(30deg);
-      border-top: 2px solid rgba(224,185,104,0.18);
-    }
-
-    .road::before {
-      content: "";
-      position: absolute;
-      top: 28px;
-      left: 50%;
-      width: 4px;
-      height: 90px;
-      background: repeating-linear-gradient(to bottom, var(--gold-bright) 0 16px, transparent 16px 30px);
-      transform: translateX(-50%);
-      opacity: 0.7;
-    }
-
-    .car {
-      position: absolute;
-      right: 9%;
-      bottom: 22px;
-      width: 210px;
-      height: 58px;
-      background: linear-gradient(180deg, #1b2229, #040506);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 36px 18px 12px 12px;
-      box-shadow: 0 18px 22px rgba(0,0,0,0.62);
-    }
-
-    .car::before {
-      content: "";
-      position: absolute;
-      left: 44px;
-      top: -28px;
-      width: 92px;
-      height: 42px;
-      border-radius: 50px 50px 6px 6px;
-      background: linear-gradient(135deg, rgba(119,154,180,0.65), rgba(12,18,26,0.96));
-      border: 1px solid rgba(255,255,255,0.16);
-    }
-
-    .car::after {
-      content: "";
-      position: absolute;
-      right: 12px;
-      top: 24px;
-      width: 36px;
-      height: 10px;
-      border-radius: 20px;
-      background: #9f1f1d;
-      box-shadow: -132px 0 0 #9f1f1d;
-    }
-
-    .section {
-      padding: 82px 20px;
-    }
-
-    .section-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 34px;
-    }
-
-    .eyebrow {
-      color: var(--gold-bright);
-      font: 900 0.72rem Arial, Helvetica, sans-serif;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin: 0 0 10px;
-    }
-
-    h2 {
-      margin: 0 0 14px;
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.9rem);
-      line-height: 0.92;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .section-header p,
-    .card p,
-    .footer p {
-      color: rgba(239,225,195,0.76);
-      font: 1rem/1.75 Arial, Helvetica, sans-serif;
-    }
-
-    .event-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .event-card,
-    .card {
-      border: 1px solid rgba(224,185,104,0.24);
-      background: linear-gradient(180deg, rgba(18,30,43,0.82), rgba(5,7,10,0.82));
-      border-radius: 22px;
-      padding: 24px;
-      box-shadow: 0 16px 44px rgba(0,0,0,0.22);
-    }
-
-    .event-card h3,
-    .card h3 {
-      margin: 0 0 8px;
-      color: var(--cream);
-      font: 900 1.05rem/1.3 Arial, Helvetica, sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .event-card .date {
-      color: var(--gold-bright);
-      font: 900 0.86rem Arial, Helvetica, sans-serif;
       letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
     }
 
-    .event-card p {
-      color: rgba(239,225,195,0.76);
-      font: 1rem/1.75 Arial, Helvetica, sans-serif;
-      margin-bottom: 0;
+    footer {
+      border-top: 1px solid rgba(224,185,104,0.18);
+      padding: 24px 0 40px;
+      text-align: center;
+      color: rgba(239,225,195,0.6);
+      font: 0.88rem/1.7 Arial, Helvetica, sans-serif;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      color: var(--gold-bright);
-      font-size: 1.35rem;
-      margin-bottom: 18px;
-      background: rgba(0,0,0,0.2);
-    }
-
-    .rsvp-panel {
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 36px;
-      background:
-        radial-gradient(circle at 84% 0%, rgba(181,58,47,0.16), transparent 34%),
-        linear-gradient(135deg, rgba(23,38,54,0.96), rgba(3,5,7,0.94));
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 28px;
-      align-items: center;
-    }
-
-    .disclaimer {
-      border-top: 1px solid rgba(224,185,104,0.25);
-      padding-top: 20px;
-      margin-top: 20px;
-      color: rgba(239,225,195,0.62);
-      font: 0.82rem/1.65 Arial, Helvetica, sans-serif;
-    }
-
-    .footer {
-      padding: 42px 20px 56px;
-      border-top: 1px solid rgba(224,185,104,0.2);
-      background: rgba(0,0,0,0.32);
-    }
-
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer strong {
-      display: block;
-      color: var(--gold-bright);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font: 900 0.74rem Arial, Helvetica, sans-serif;
-      margin-bottom: 8px;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .rsvp-panel,
-      .event-grid { grid-template-columns: 1fr; }
-      .poster-card { min-height: auto; }
-      .grid { grid-template-columns: repeat(2, 1fr); }
-      .nav-links { display: none; }
+    @media (max-width: 920px) {
+      .flyer-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 560px) {
-      .hero { padding-top: 54px; }
-      .hero-title { font-size: 3.6rem; }
-      .grid { grid-template-columns: 1fr; }
-      .poster-card,
-      .rsvp-panel { padding: 24px; border-radius: 22px; }
-      .car { right: 4%; width: 180px; }
+      header.hero { padding-top: 58px; }
+      .disclaimer { padding: 18px; }
+      .flyer-copy { padding: 18px; }
       .button { width: 100%; }
     }
   </style>
 </head>
-
 <body>
-  <div class="site-wrap">
-    <header class="nav">
-      <div class="nav-inner">
-        <a class="brand" href="#top" aria-label="Carry On My Wayward Con home">
-          <span class="brand-mark">✦</span>
-          <span>Wayward Con</span>
-        </a>
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#events">Events</a>
-          <a href="#features">Meetup</a>
-          <a href="#rsvp">RSVP</a>
-        </nav>
+  <header class="hero">
+    <div class="wrap">
+      <div class="kicker">Unofficial Fan Convention Series</div>
+      <h1>Carry On My <span>Wayward Con</span></h1>
+      <p class="subhead">
+        A fan-organized meetup series inspired by the fandom, built around the flyers below.
+        This homepage is intentionally simple: just the title, the disclaimer, and both event flyers front and center.
+      </p>
+      <div class="disclaimer">
+        <div class="label">Important disclaimer</div>
+        <p>
+          This is an <strong>unofficial fan convention</strong> / fan meetup concept and is <strong>not affiliated with Warner Bros., The CW, the actors, or their representatives</strong>.
+          Invitations may be extended to talent, but invited appearances are not guaranteed unless explicitly confirmed.
+        </p>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-grid">
-          <div>
-            <div class="kicker">Unofficial Fan Meetup Series</div>
-            <h1 id="hero-title" class="hero-title">Carry On My <span>Wayward Con</span></h1>
-            <p class="subtitle">
-              A fan-organized Discord group gathering for hunters, lore nerds, classic-car people,
-              trivia champs, and anyone who wants one weird, memorable road-trip-style meetup.
-            </p>
-            <div class="meta-strip">
-              <div class="meta-pill">
-                <small>Part One</small>
-                <strong>Louisville • June 10</strong>
-              </div>
-              <div class="meta-pill">
-                <small>Part Two</small>
-                <strong>Indianapolis • June 12</strong>
-              </div>
-              <div class="meta-pill">
-                <small>Status</small>
-                <strong>Unofficial & fan-run</strong>
-              </div>
-            </div>
-            <div class="cta-row">
-              <a class="button button-primary" href="#rsvp">Join the RSVP list</a>
-              <a class="button button-secondary" href="#events">See event details</a>
-            </div>
-          </div>
-
-          <aside class="poster-card" aria-label="Event feature card">
-            <div class="poster-content">
-              <div class="poster-label">First Annual</div>
-              <div class="poster-date">The Road<br />So Far</div>
-
-              <div class="warning-box">
-                <small>Louisville</small>
-                <strong>Galaxies Venue and Marketplace<br />732 E Market St, Louisville, KY 40202</strong>
-                <em>June 10 • 11 AM – 2 AM</em>
-              </div>
-
-              <div class="warning-box">
-                <small>Indiana</small>
-                <strong>Indianapolis, Indiana<br />Meet-up location to be determined.</strong>
-                <em>June 12</em>
-              </div>
-
-              <div class="car-scene" aria-hidden="true">
-                <div class="road"></div>
-                <div class="car"></div>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="section" id="events">
-        <div class="section-inner">
-          <div class="section-header">
-            <p class="eyebrow">The road so far</p>
-            <h2>Two fan meetups. One weird little family.</h2>
+  <section class="flyers">
+    <div class="wrap">
+      <div class="section-title">Event Flyers</div>
+      <div class="flyer-grid">
+        <article class="flyer-card">
+          <img src="assets/louisville-flyer.png" alt="Carry On My Wayward Con flyer for Louisville, Kentucky on June 10, 2026." />
+          <div class="flyer-copy">
+            <div class="flyer-eyebrow">Part One</div>
+            <h2>Louisville, Kentucky</h2>
             <p>
-              This is built for a tight Discord community first: casual, fun, photo-friendly,
-              and very clear that it is not an official convention.
+              First Annual Carry On My Wayward Con. Unofficial fan meetup on June 10, 2026 at Galaxies Venue and Marketplace.
             </p>
-          </div>
-
-          <div class="event-grid">
-            <article class="event-card">
-              <div class="date">Part One • June 10, 2026</div>
-              <h3>Louisville, Kentucky</h3>
-              <p>
-                <strong>Galaxies Venue and Marketplace</strong><br />
-                732 E Market St, Louisville, KY 40202<br />
-                11 AM – 2 AM
-              </p>
-              <p>
-                Invitations have been extended to Jensen Ackles, Jared Padalecki, and Misha Collins.
-                Appearance is not guaranteed.
-              </p>
-            </article>
-
-            <article class="event-card">
-              <div class="date">Part Two • June 12, 2026</div>
-              <h3>Indianapolis, Indiana</h3>
-              <p>
-                <strong>Meet-up location to be determined.</strong><br />
-                Stay tuned for more details.
-              </p>
-              <p>
-                Invitations have been extended to Jared Padalecki and Misha Collins.
-                Jensen Ackles is not available. DJ Qualls is confirmed.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="features">
-        <div class="section-inner">
-          <div class="section-header">
-            <p class="eyebrow">The family business, fan edition</p>
-            <h2>Meet up. Take pics. Trade theories.</h2>
-            <p>
-              Expect fan hangouts, trivia, photos, music, cosplay, and a classic black Impala-inspired
-              photo op.
-            </p>
-          </div>
-
-          <div class="grid">
-            <article class="card">
-              <div class="icon">☕</div>
-              <h3>Fan Hangout</h3>
-              <p>Meet the people behind the usernames, grab food nearby, and keep the day relaxed.</p>
-            </article>
-
-            <article class="card">
-              <div class="icon">?</div>
-              <h3>Trivia & Giveaways</h3>
-              <p>Quick rounds, inside jokes, low-pressure prizes, and bragging rights for the lore-obsessed.</p>
-            </article>
-
-            <article class="card">
-              <div class="icon">📷</div>
-              <h3>Impala Photo Op</h3>
-              <p>A classic black Impala-inspired setup for solo photos, group shots, and cinematic poster moments.</p>
-            </article>
-
-            <article class="card">
-              <div class="icon">☆</div>
-              <h3>Cosplay Welcome</h3>
-              <p>Flannel, jackets, angel ties, demon eyes, hunter badges, or regular clothes. Show up how you want.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="rsvp">
-        <div class="section-inner">
-          <div class="rsvp-panel">
-            <div>
-              <p class="eyebrow">Discord RSVP</p>
-              <h2>Save your hunter seat.</h2>
-              <p>
-                Replace this button with the Discord invite, Google Form, Eventbrite page,
-                or whatever the group decides to use for RSVPs.
-              </p>
-              <div class="disclaimer">
-                Fan-organized unofficial gathering. Not affiliated with Warner Bros., The CW, the actors,
-                their teams, representatives, or any official convention organizer. Invitations may be sent
-                to talent, but no invited actor appearance is confirmed or guaranteed unless explicitly stated.
-              </div>
+            <div class="meta">
+              <span class="pill">June 10, 2026</span>
+              <span class="pill">11 AM – 2 AM</span>
+              <span class="pill">Classic Black Impala Photo Op</span>
             </div>
-            <a class="button button-primary" href="https://discord.com" target="_blank" rel="noreferrer">
-              RSVP on Discord
-            </a>
+            <div class="download-row">
+              <a class="button" href="assets/louisville-flyer.png" target="_blank">Open Flyer</a>
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </article>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>
-          <strong>Carry On My Wayward Con</strong>
-          <p>Unofficial fan meetup series • Louisville and Indianapolis • June 2026</p>
-        </div>
-        <div>
-          <strong>Important</strong>
-          <p>Actor appearances are not guaranteed unless explicitly confirmed.</p>
-        </div>
+        <article class="flyer-card">
+          <img src="assets/indianapolis-flyer.png" alt="The Road So Far flyer for Indianapolis, Indiana on June 12, 2026." />
+          <div class="flyer-copy">
+            <div class="flyer-eyebrow">Part Two</div>
+            <h2>Indianapolis, Indiana</h2>
+            <p>
+              The Road So Far. Unofficial fan meetup concept for June 12, 2026 with more details still to come.
+            </p>
+            <div class="meta">
+              <span class="pill">June 12, 2026</span>
+              <span class="pill">Location TBD</span>
+              <span class="pill">DJ Qualls Confirmed</span>
+            </div>
+            <div class="download-row">
+              <a class="button" href="assets/indianapolis-flyer.png" target="_blank">Open Flyer</a>
+            </div>
+          </div>
+        </article>
       </div>
-    </footer>
-  </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      Carry On My Wayward Con • Unofficial fan convention / fan meetup series
+    </div>
+  </footer>
 </body>
 </html>
