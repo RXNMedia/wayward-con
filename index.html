@@ -3,8 +3,124 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carry On My Wayward Con | Unofficial Fan Convention</title>
-  <meta name="description" content="Unofficial fan convention meetup series featuring the Louisville and Indiana flyers." />
+
+  <title>Carry On My Wayward Con | Unofficial Supernatural Fan Convention</title>
+  <meta name="description" content="Carry On My Wayward Con is an unofficial Supernatural-inspired fan convention and fan meetup series featuring Louisville, Kentucky on June 10, 2026 and Indianapolis, Indiana on June 12, 2026." />
+  <meta name="keywords" content="Carry On My Wayward Con, Wayward Con, unofficial Supernatural fan convention, Supernatural fan meetup, Louisville fan convention, Indianapolis fan meetup, Supernatural Discord meetup, Impala photo op" />
+  <meta name="author" content="Carry On My Wayward Con" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://waywardcon.org/" />
+
+  <!-- Open Graph / Facebook / Discord preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://waywardcon.org/" />
+  <meta property="og:title" content="Carry On My Wayward Con | Unofficial Fan Convention" />
+  <meta property="og:description" content="An unofficial Supernatural-inspired fan convention and fan meetup series with Louisville and Indianapolis event flyers." />
+  <meta property="og:image" content="https://waywardcon.org/assets/louisville-flyer.png" />
+  <meta property="og:image:alt" content="Carry On My Wayward Con Louisville event flyer." />
+  <meta property="og:site_name" content="Carry On My Wayward Con" />
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Carry On My Wayward Con | Unofficial Fan Convention" />
+  <meta name="twitter:description" content="Unofficial Supernatural-inspired fan convention and fan meetup series featuring Louisville and Indianapolis event flyers." />
+  <meta name="twitter:image" content="https://waywardcon.org/assets/louisville-flyer.png" />
+
+  <!-- Basic icons -->
+  <link rel="icon" href="assets/louisville-flyer.png" />
+  <link rel="apple-touch-icon" href="assets/louisville-flyer.png" />
+
+  <!-- Structured data for search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Carry On My Wayward Con",
+    "url": "https://waywardcon.org/",
+    "description": "Unofficial Supernatural-inspired fan convention and fan meetup series.",
+    "inLanguage": "en-US"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Event",
+        "name": "Carry On My Wayward Con - Louisville",
+        "description": "Unofficial Supernatural-inspired fan convention and fan meetup in Louisville, Kentucky. Fan-organized and not affiliated with Warner Bros., The CW, the actors, or representatives.",
+        "startDate": "2026-06-10T11:00:00-04:00",
+        "endDate": "2026-06-11T02:00:00-04:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "image": "https://waywardcon.org/assets/louisville-flyer.png",
+        "url": "https://waywardcon.org/",
+        "location": {
+          "@type": "Place",
+          "name": "Galaxies Venue and Marketplace",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "732 E Market St",
+            "addressLocality": "Louisville",
+            "addressRegion": "KY",
+            "postalCode": "40202",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Carry On My Wayward Con",
+          "url": "https://waywardcon.org/"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://waywardcon.org/",
+          "availability": "https://schema.org/InStock",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "The Road So Far - Indianapolis",
+        "description": "Part Two of the unofficial fan-organized meetup series in Indianapolis, Indiana. Location to be determined. Stay tuned for more details.",
+        "startDate": "2026-06-12",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "image": "https://waywardcon.org/assets/indianapolis-flyer.png",
+        "url": "https://waywardcon.org/",
+        "location": {
+          "@type": "Place",
+          "name": "Meet-up location to be determined",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Indianapolis",
+            "addressRegion": "IN",
+            "addressCountry": "US"
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "Carry On My Wayward Con",
+          "url": "https://waywardcon.org/"
+        },
+        "performer": {
+          "@type": "Person",
+          "name": "DJ Qualls"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://waywardcon.org/",
+          "availability": "https://schema.org/InStock",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --bg: #05070a;
@@ -21,6 +137,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       color: var(--cream);
@@ -84,10 +201,17 @@
     }
 
     .subhead {
-      max-width: 880px;
+      max-width: 900px;
       margin: 18px auto 0;
       font: 1.06rem/1.8 Arial, Helvetica, sans-serif;
       color: rgba(239,225,195,0.8);
+    }
+
+    .seo-text {
+      max-width: 920px;
+      margin: 14px auto 0;
+      font: 0.95rem/1.75 Arial, Helvetica, sans-serif;
+      color: rgba(239,225,195,0.68);
     }
 
     .disclaimer {
@@ -238,19 +362,26 @@
     }
   </style>
 </head>
+
 <body>
   <header class="hero">
     <div class="wrap">
       <div class="kicker">Unofficial Fan Convention Series</div>
       <h1>Carry On My <span>Wayward Con</span></h1>
       <p class="subhead">
-        A fan-organized meetup series inspired by the fandom, built around the flyers below.
-        This homepage is intentionally simple: just the title, the disclaimer, and both event flyers front and center.
+        A fan-organized Supernatural-inspired meetup series built around the flyers below.
+        This homepage keeps the focus on the official event artwork, dates, cities, and key disclaimers.
       </p>
+      <p class="seo-text">
+        Featuring an unofficial Louisville, Kentucky fan convention meetup on June 10, 2026 and
+        Part Two: The Road So Far in Indianapolis, Indiana on June 12, 2026.
+      </p>
+
       <div class="disclaimer">
         <div class="label">Important disclaimer</div>
         <p>
-          This is an <strong>unofficial fan convention</strong> / fan meetup concept and is <strong>not affiliated with Warner Bros., The CW, the actors, or their representatives</strong>.
+          This is an <strong>unofficial fan convention</strong> / fan meetup concept and is
+          <strong>not affiliated with Warner Bros., The CW, the actors, or their representatives</strong>.
           Invitations may be extended to talent, but invited appearances are not guaranteed unless explicitly confirmed.
         </p>
       </div>
@@ -260,9 +391,10 @@
   <section class="flyers">
     <div class="wrap">
       <div class="section-title">Event Flyers</div>
+
       <div class="flyer-grid">
         <article class="flyer-card">
-          <img src="assets/louisville-flyer.png" alt="Carry On My Wayward Con flyer for Louisville, Kentucky on June 10, 2026." />
+          <img src="assets/louisville-flyer.png" alt="Carry On My Wayward Con unofficial Supernatural fan convention flyer for Louisville Kentucky on June 10 2026 at Galaxies Venue and Marketplace." />
           <div class="flyer-copy">
             <div class="flyer-eyebrow">Part One</div>
             <h2>Louisville, Kentucky</h2>
@@ -275,13 +407,13 @@
               <span class="pill">Classic Black Impala Photo Op</span>
             </div>
             <div class="download-row">
-              <a class="button" href="assets/louisville-flyer.png" target="_blank">Open Flyer</a>
+              <a class="button" href="assets/louisville-flyer.png" target="_blank" rel="noopener">Open Flyer</a>
             </div>
           </div>
         </article>
 
         <article class="flyer-card">
-          <img src="assets/indianapolis-flyer.png" alt="The Road So Far flyer for Indianapolis, Indiana on June 12, 2026." />
+          <img src="assets/indianapolis-flyer.png" alt="The Road So Far unofficial Supernatural fan meetup flyer for Indianapolis Indiana on June 12 2026 with DJ Qualls confirmed." />
           <div class="flyer-copy">
             <div class="flyer-eyebrow">Part Two</div>
             <h2>Indianapolis, Indiana</h2>
@@ -294,7 +426,7 @@
               <span class="pill">DJ Qualls Confirmed</span>
             </div>
             <div class="download-row">
-              <a class="button" href="assets/indianapolis-flyer.png" target="_blank">Open Flyer</a>
+              <a class="button" href="assets/indianapolis-flyer.png" target="_blank" rel="noopener">Open Flyer</a>
             </div>
           </div>
         </article>
@@ -304,7 +436,7 @@
 
   <footer>
     <div class="wrap">
-      Carry On My Wayward Con • Unofficial fan convention / fan meetup series
+      Carry On My Wayward Con • Unofficial fan convention / fan meetup series • Louisville, KY and Indianapolis, IN
     </div>
   </footer>
 </body>
